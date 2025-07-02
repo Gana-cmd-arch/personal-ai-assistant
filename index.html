@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS AI Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <h1 class="logo-text">NEXUS</h1>
+                <span class="logo-subtitle">AI Assistant</span>
+            </div>
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                <span class="status-text">Online</span>
+            </div>
+        </header>
+
+        <!-- Main Interface -->
+        <main class="main-content">
+            <!-- Chat Container -->
+            <div class="chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="welcome-message">
+                        <div class="ai-avatar"></div>
+                        <div class="message-content">
+                            <p>Hello! I'm NEXUS, your futuristic AI assistant. I can help you with notes, reminders, and answer questions. Try saying "Save Note" or "What's the time?"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Voice Interface -->
+            <div class="voice-interface">
+                <div class="voice-visualizer" id="voiceVisualizer">
+                    <div class="waveform">
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                    </div>
+                </div>
+                
+                <button class="voice-button" id="voiceButton">
+                    <div class="mic-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                            <line x1="12" y1="19" x2="12" y2="23"></line>
+                            <line x1="8" y1="23" x2="16" y2="23"></line>
+                        </svg>
+                    </div>
+                    <div class="pulse-ring"></div>
+                    <div class="pulse-ring pulse-ring-2"></div>
+                </button>
+                
+                <div class="voice-status" id="voiceStatus">
+                    <span>Tap to speak</span>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <button class="action-btn" data-command="time">
+                    <span class="action-icon">🕐</span>
+                    <span class="action-text">Time</span>
+                </button>
+                <button class="action-btn" data-command="notes">
+                    <span class="action-icon">📝</span>
+                    <span class="action-text">Notes</span>
+                </button>
+                <button class="action-btn" data-command="reminders">
+                    <span class="action-icon">⏰</span>
+                    <span class="action-text">Reminders</span>
+                </button>
+            </div>
+        </main>
+
+        <!-- Side Panel for Notes/Reminders -->
+        <aside class="side-panel" id="sidePanel">
+            <div class="panel-header">
+                <h3 class="panel-title">Notes & Reminders</h3>
+                <button class="close-panel" id="closePanel">×</button>
+            </div>
+            <div class="panel-content">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="notes">Notes</button>
+                    <button class="tab-btn" data-tab="reminders">Reminders</button>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-panel active" id="notesPanel">
+                        <div class="notes-list" id="notesList"></div>
+                    </div>
+                    <div class="tab-panel" id="remindersPanel">
+                        <div class="reminders-list" id="remindersList"></div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
